@@ -35,7 +35,7 @@ public class FIFOSimulator extends PageReplacementSimulator {
 
                     if (verbose) {
                         System.out.printf("Ref %d: Page fault - Carregou página %d no frame %d\n",
-                                        references, pageId, freeFrame);
+                                        this.references, pageId, freeFrame);
                     }
                 } else {
                     // Precisa fazer evicção (FIFO - remove o mais antigo)
@@ -48,12 +48,12 @@ public class FIFOSimulator extends PageReplacementSimulator {
 
                     if (verbose) {
                         System.out.printf("Ref %d: Page fault - Evictou página %d, carregou %d no frame %d\n",
-                                        references, victimPage, pageId, victimFrame);
+                                        this.references, victimPage, pageId, victimFrame);
                     }
                 }
             } else if (verbose) {
                 System.out.printf("Ref %d: Hit - Página %d já está no frame %d\n",
-                                references, pageId, frameIdx);
+                                this.references, pageId, frameIdx);
             }
         }
     }
